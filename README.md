@@ -75,6 +75,25 @@
         #resultMessage {
             margin-top: 20px;
         } 
+         .input-container {
+            margin-top: 20px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            position: relative;
+        }
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #1f1f1f;
+            color: #ffffff;
+            border-radius: 5px;
+            opacity: 0.8;
+        }
+        .input-container input::placeholder {
+            color: #ffffff;
+            opacity: 0.5;
+        }
         .logo {
             width: 200px;
             margin: 20px auto;
