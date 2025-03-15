@@ -143,12 +143,12 @@
                 resultMessage.classList.remove('hidden');
                 resultMessage.classList.add('completed');
                 resultMessage.textContent = "✅ Отправлено";
-                document.getElementById('submitButton').style.display = 'none'; // скрываем кнопку после отправки
+                document.getElementById('submitButton').style.display = 'none'; // скрываем кнопку после успешной отправки
             } else {
                 resultMessage.classList.remove('hidden');
                 resultMessage.classList.add('error');
                 resultMessage.textContent = "❌ Не все выполнено: " + notCheckedItems.join(", ");
-                document.getElementById('submitButton').style.display = 'none'; // скрываем кнопку после проверки
+                document.getElementById('submitButton').style.display = 'inline-block'; // показываем кнопку обратно
             }
         }
     </script>
