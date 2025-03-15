@@ -28,7 +28,7 @@
         .completed {
             color: #ffffff;
             font-weight: bold;
-            background-color: rgba(46, 125, 50, 0.8);
+            background-color: #121212; /* Цвет совпадает с фоном */
             border: 1px solid #1b5e20;
             padding: 10px;
             border-radius: 5px;
@@ -37,7 +37,7 @@
         .error {
             color: red;
             font-weight: bold;
-            background-color: rgba(244, 67, 54, 0.8);
+            background-color: #121212; /* Цвет совпадает с фоном */
             border: 1px solid #d32f2f;
             padding: 10px;
             border-radius: 5px;
