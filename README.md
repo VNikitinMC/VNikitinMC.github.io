@@ -82,7 +82,7 @@
     </style>
 </head>
 <body>
-    <img src=""C:\Users\innan\OneDrive\Рабочий стол\MedControl\logo.png.jpg"" alt="Логотип MedControl" class="logo">
+   <img src="logo.png" alt="Логотип MedControl" class="logo">
     <h1>Первоначальная настройка Планшета/Телефона</h1>
     <ul id="checklist">
         <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Проверка обновления ONE UI на устройстве.</label></li>
