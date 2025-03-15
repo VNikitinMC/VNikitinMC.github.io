@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: #121212; 
-            color: #ffffff; 
-            font-family: Arial, sans-serif; 
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
         }
         .hidden {
             display: none;
         }
         .button {
             padding: 10px 20px;
-            background-color: #1f1f1f; 
+            background-color: #1f1f1f;
             color: #ffffff;
-            border: 1px solid #ffffff; 
+            border: 1px solid #ffffff;
             border-radius: 5px;
             cursor: pointer;
             margin-top: 20px;
@@ -28,8 +28,8 @@
         .completed {
             color: #ffffff;
             font-weight: bold;
-            background-color: #2e7d32; 
-            border: 1px solid #1b5e20; 
+            background-color: rgba(46, 125, 50, 0.8);
+            border: 1px solid #1b5e20;
             padding: 10px;
             border-radius: 5px;
             margin-top: 20px;
@@ -37,40 +37,40 @@
         .error {
             color: red;
             font-weight: bold;
-            background-color: #f44336; 
-            border: 1px solid #d32f2f; 
+            background-color: rgba(244, 67, 54, 0.8);
+            border: 1px solid #d32f2f;
             padding: 10px;
             border-radius: 5px;
             margin-top: 20px;
         }
         input[type="checkbox"] {
-            display: none; 
+            display: none;
         }
         .custom-checkbox {
             position: relative;
             display: inline-block;
-            width: 24px;   
-            height: 24px;  
-            border: 2px solid #666; 
-            border-radius: 4px; 
-            margin-right: 10px; 
-            background-color: #323232; 
-            transition: background-color 0.3s, border 0.3s; 
+            width: 24px;
+            height: 24px;
+            border: 2px solid #666;
+            border-radius: 4px;
+            margin-right: 10px;
+            background-color: #323232;
+            transition: background-color 0.3s, border 0.3s;
         }
         input[type="checkbox"]:checked + .custom-checkbox {
-            background-color: #4caf50; 
-            border-color: #4caf50; 
+            background-color: #4caf50;
+            border-color: #4caf50;
         }
         input[type="checkbox"]:checked + .custom-checkbox:after {
-            content: "✔"; 
-            color: #ffffff; 
-            position: absolute; 
-            top: 0; 
+            content: "✔";
+            color: #ffffff;
+            position: absolute;
+            top: 0;
             left: 0;
-            width: 24px; 
-            height: 24px; 
-            text-align: center; 
-            line-height: 24px; 
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            line-height: 24px;
         }
         #resultMessage {
             margin-top: 20px;
