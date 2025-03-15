@@ -43,19 +43,19 @@
             border: 2px solid #666; /* Граница чекбокса */
             border-radius: 4px; /* Закругление углов */
             margin-right: 10px; /* Отступ справа */
-            background-color: #e0f7fa; /* Светлый фон для чекбокса */
+            background-color: #e0f7e0; /* Светлый зеленый фон для чекбокса */
             transition: background-color 0.3s, border 0.3s; /* Плавные анимации */
         }
 
         /* Стиль для состояния чекбокса */
         input[type="checkbox"]:checked + .custom-checkbox {
-            background-color: #4caf50; /* Цвет при выборе */
+            background-color: #a5d6a7; /* Более светлый зеленый при выборе */
             border-color: #4caf50; /* Цвет границы при выборе */
         }
 
         input[type="checkbox"]:checked + .custom-checkbox:after {
             content: "✔"; /* Символ галочки */
-            color: white; /* Цвет галочки */
+            color: #ffffff; /* Цвет галочки - белый */
             position: absolute; 
             top: 0; 
             left: 0;
