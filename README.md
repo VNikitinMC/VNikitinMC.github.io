@@ -15,7 +15,6 @@
            <li><input type="checkbox"> Проверка установлены ли приложения "MEDCONTROL","Ассистент","MEDCONTROL APP" на устройстве</li>
        </ul>
 
-   <html lang="ru">
    <head>
        <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
