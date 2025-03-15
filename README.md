@@ -1,5 +1,4 @@
 # Чек лист ПАК
-<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -44,13 +43,14 @@
             border: 2px solid #666; /* Граница чекбокса */
             border-radius: 4px; /* Закругление углов */
             margin-right: 10px; /* Отступ справа */
-            cursor: pointer;
+            background-color: #e0f7fa; /* Светлый фон для чекбокса */
+            transition: background-color 0.3s, border 0.3s; /* Плавные анимации */
         }
 
         /* Стиль для состояния чекбокса */
         input[type="checkbox"]:checked + .custom-checkbox {
-            background-color: green; /* Цвет при выборе */
-            border-color: green; /* Цвет границы при выборе */
+            background-color: #4caf50; /* Цвет при выборе */
+            border-color: #4caf50; /* Цвет границы при выборе */
         }
 
         input[type="checkbox"]:checked + .custom-checkbox:after {
@@ -63,6 +63,15 @@
             height: 24px; 
             text-align: center; 
             line-height: 24px; /* Центрирование галочки */
+        }
+
+        /* Стили для списка невыполненных элементов */
+        #resultMessage {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid red;
+            background-color: #ffebee; /* Светлый красный фон */
+            border-radius: 5px; /* Закругление углов */
         }
     </style>
 </head>
