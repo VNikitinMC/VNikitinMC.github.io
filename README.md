@@ -22,11 +22,19 @@
         .completed {
             color: green;
             font-weight: bold;
+            background-color: #e0f7e0; /* Светлый зеленый фон для завершенных сообщений */
+            border: 1px solid green; /* Обводка зеленым цветом */
+            padding: 10px; /* Отступ в сообщении */
+            border-radius: 5px; /* Закругление углов */
         }
 
         .error {
             color: red;
             font-weight: bold;
+            border: 1px solid red;
+            background-color: #ffebee; /* Светлый красный фон */
+            padding: 10px; /* Отступ в сообщении */
+            border-radius: 5px; /* Закругление углов */
         }
 
         /* Стили для кастомного чекбокса */
@@ -68,10 +76,6 @@
         /* Стили для списка невыполненных элементов */
         #resultMessage {
             margin-top: 20px;
-            padding: 10px;
-            border: 1px solid red;
-            background-color: #ffebee; /* Светлый красный фон */
-            border-radius: 5px; /* Закругление углов */
         }
     </style>
 </head>
