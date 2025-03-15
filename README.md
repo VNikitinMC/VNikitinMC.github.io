@@ -7,7 +7,6 @@
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <link rel="stylesheet" href="styles.css">
    </head>
-   <body>
        <h1>Первоначальная настройка Планшета/Телефона</h1>
        <ul id="checklist">
            <li><input type="checkbox"> Проверка обновления ONE UI на устройстве.</li>
@@ -15,7 +14,6 @@
            <li><input type="checkbox"> Проверка работоспособности определения местоположения через приложение карт </li>
            <li><input type="checkbox"> Проверка установлены ли приложения "MEDCONTROL","Ассистент","MEDCONTROL APP" на устройстве</li>
        </ul>
-   </html>
 
    <html lang="ru">
    <head>
