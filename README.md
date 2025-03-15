@@ -29,7 +29,7 @@
             color: #ffffff;
             font-weight: bold;
             background-color: #121212; /* Цвет совпадает с фоном */
-            border: 1px solid #1b5e20;
+            border: 1px solid red; /* Тонкая красная рамка */
             padding: 10px;
             border-radius: 5px;
             margin-top: 20px;
@@ -38,7 +38,7 @@
             color: red;
             font-weight: bold;
             background-color: #121212; /* Цвет совпадает с фоном */
-            border: 1px solid #d32f2f;
+            border: 1px solid red; /* Тонкая красная рамка */
             padding: 10px;
             border-radius: 5px;
             margin-top: 20px;
