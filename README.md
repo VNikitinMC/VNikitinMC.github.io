@@ -22,58 +22,54 @@
         .completed {
             color: green;
             font-weight: bold;
-            background-color: #e0f7e0; /* Светлый зеленый фон для завершенных сообщений */
-            border: 1px solid green; /* Обводка зеленым цветом */
-            padding: 10px; /* Отступ в сообщении */
-            border-radius: 5px; /* Закругление углов */
+            background-color: #e0f7e0; 
+            border: 1px solid green;
+            padding: 10px; 
+            border-radius: 5px; 
         }
 
         .error {
             color: red;
             font-weight: bold;
             border: 1px solid red;
-            background-color: #ffebee; /* Светлый красный фон */
-            padding: 10px; /* Отступ в сообщении */
-            border-radius: 5px; /* Закругление углов */
+            background-color: #ffebee; 
+            padding: 10px; 
+            border-radius: 5px;
         }
 
-        /* Стили для кастомного чекбокса */
         input[type="checkbox"] {
-            display: none; /* Скрываем стандартные чекбоксы */
+            display: none; 
         }
 
-        /* Стиль для кастомного элемента */
         .custom-checkbox {
             position: relative;
             display: inline-block;
-            width: 24px;   /* Размер чекбокса */
-            height: 24px;  /* Размер чекбокса */
-            border: 2px solid #666; /* Граница чекбокса */
-            border-radius: 4px; /* Закругление углов */
-            margin-right: 10px; /* Отступ справа */
-            background-color: #e0f7e0; /* Светлый зеленый фон для чекбокса */
-            transition: background-color 0.3s, border 0.3s; /* Плавные анимации */
+            width: 24px;  
+            height: 24px;
+            border: 2px solid #666; 
+            border-radius: 4px;
+            margin-right: 10px;
+            background-color: #e0f7e0;
+            transition: background-color 0.3s, border 0.3s;
         }
 
-        /* Стиль для состояния чекбокса */
         input[type="checkbox"]:checked + .custom-checkbox {
-            background-color: #a5d6a7; /* Более светлый зеленый при выборе */
-            border-color: #4caf50; /* Цвет границы при выборе */
+            background-color: #a5d6a7;
+            border-color: #4caf50; 
         }
 
         input[type="checkbox"]:checked + .custom-checkbox:after {
-            content: "✔"; /* Символ галочки */
-            color: #ffffff; /* Цвет галочки - белый */
+            content: "✔";
+            color: #ffffff;
             position: absolute; 
             top: 0; 
             left: 0;
             width: 24px; 
             height: 24px; 
             text-align: center; 
-            line-height: 24px; /* Центрирование галочки */
+            line-height: 24px;
         }
 
-        /* Стили для списка невыполненных элементов */
         #resultMessage {
             margin-top: 20px;
         }
@@ -147,12 +143,12 @@
                 resultMessage.classList.remove('hidden');
                 resultMessage.classList.add('completed');
                 resultMessage.textContent = "✅ Отправлено";
-                document.getElementById('submitButton').style.display = 'none'; // скрываем кнопку после успешной отправки
+                document.getElementById('submitButton').style.display = 'none';
             } else {
                 resultMessage.classList.remove('hidden');
                 resultMessage.classList.add('error');
                 resultMessage.textContent = "❌ Не все выполнено: " + notCheckedItems.join(", ");
-                document.getElementById('submitButton').style.display = 'inline-block'; // показываем кнопку обратно
+                document.getElementById('submitButton').style.display = 'inline-block';
             }
         }
     </script>
