@@ -120,7 +120,18 @@
         <li><label><input type="checkbox"> <span class="custom-checkbox"></span> У комплекса поставлена верная организация, указанная в заявке, поставлена галочка "Можно связать с заявкой"</label></li>
         <li><label><input type="checkbox"> <span class="custom-checkbox"></span> В объекты комплекса введены верные Устройство, принтер и телефон</label></li>
     </ul>
-
+    <h1>Комплектность ПАК</h1>
+    <ul id="checklist">
+        <li><label><input type="checkbox"> <span class="custom-checkbox"></span>В комплекте имются провода для зарядки ПАК и принтера</label></li>
+        <li><label><input type="checkbox"> <span class="custom-checkbox"></span>В коробке принтера имеется мундштукидля измерения алкоголя в организме</label></li>
+        <li><label><input type="checkbox"> <span class="custom-checkbox"></span>В коробке имеются все необходимые документы для ПАК</label></li>
+    </ul>
+    <h1>Отчет</h1>
+    <ul id="checklist">
+        <li><label><input type="checkbox"> <span class="custom-checkbox"></span>Доложено ли начальнику производства что пак готов к отправке?</label></li>
+        <li><label><input type="checkbox"> <span class="custom-checkbox"></span> В заявке верно написаны номера ПАК и адрес отгрузки</label></li>
+    </ul>
+   
     <button class="button" id="submitButton">Готово</button>
     <div id="resultMessage" class="hidden"></div>
 
