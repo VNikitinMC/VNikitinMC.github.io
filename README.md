@@ -109,8 +109,9 @@
     </script>
 </body>
 </html>
+
 body {
-    background-image: url('"C:\Users\innan\OneDrive\Рабочий стол\medcontrol.jpg"'); /* Укажите путь к вашему изображению */
+    background-image: url('C:/Users/innan/OneDrive/Рабочий стол/medcontrol.jpg'); /* Укажите путь к вашему изображению */
     background-size: cover; /* Изображение будет покрывать весь фон */
     background-position: center; /* Центрируем изображение */
     background-repeat: no-repeat; /* Не повторяем изображение */
