@@ -25,11 +25,11 @@
         .button:hover {
             background-color: #444444;
         }
-        .completed {
+         .completed {
             color: #ffffff;
             font-weight: bold;
             background-color: #121212; /* Цвет совпадает с фоном */
-            border: 1px solid red; /* Тонкая красная рамка */
+            border: 1px solid green; /* Зелёная рамка для успешной отправки */
             padding: 10px;
             border-radius: 5px;
             margin-top: 20px;
