@@ -82,7 +82,6 @@
     </style>
 </head>
 <body>
-<img src="C:\Users\innan\OneDrive\Рабочий стол\logo.png.jpg" alt="Логотип MedControl" class="logo">
     <img src="logo.png" alt="Логотип MedControl" class="logo">
     <h1>Первоначальная настройка Планшета/Телефона</h1>
     <ul id="checklist">
