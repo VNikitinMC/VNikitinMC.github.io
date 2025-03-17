@@ -10,8 +10,8 @@
         }
         .button {
             padding: 10px 20px; background: #1f1f1f; color: #fff; border: 1px solid #fff; border-radius: 5px; cursor: pointer; margin: 20px 0;
-        } 
-        .button:hover {
+        }
+.button:hover {
     background: #4caf50; 
     border: 1px solid #4caf50; 
 }
@@ -23,6 +23,18 @@
         input[type="checkbox"]:checked + .custom-checkbox:after { content: "✔"; color: #fff; position: absolute; top: 0; left: 0; width: 24px; height: 24px; text-align: center; line-height: 24px; }
         .input-container { margin: 20px 0; border: 1px solid #fff; border-radius: 5px; }
         .input-container input { width: 100%; padding: 10px; background: #1f1f1f; color: #fff; border-radius: 5px; }
+             #resultMessage {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            visibility: hidden;
+            margin-top: 20px; 
+        }
+        #resultMessage.visible {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -85,13 +97,14 @@
 <div id="resultMessage" class="hidden"></div>
 
 <script>
-    document.getElementById('submitButton').onclick = () => {
-        const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
-        const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
-        const resultMessage = document.getElementById('resultMessage');
+        document.getElementById('submitButton').onclick = () => {
+            const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
+            const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
+            const resultMessage = document.getElementById('resultMessage');
 
-        resultMessage.className = unchecked.length ? 'error' : 'completed';
-        resultMessage.textContent = unchecked.length ? `❌ Не все выполнено: ${unchecked.join(", ")}` : "✅ Отправлено";
-        document.getElementById('submitButton').style.display = unchecked.length ? 'inline-block' : 'none';
-    };
-</script>
+            resultMessage.className = unchecked.length ? 'error' : 'completed';
+            resultMessage.textContent = unchecked.length ? `❌ Не все выполнено: ${unchecked.join(", ")}` : "✅ Отправлено";
+            
+            resultMessage.classList.add('visible');
+        };
+    </script>
