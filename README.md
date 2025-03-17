@@ -52,7 +52,7 @@
     <input type="text" id="input1" placeholder="Номер ПАК/СМК">
 </div>
 <div class="input-container">
-    <input type="text" id="input2" placeholder="Номер осмотра" value="№">   
+    <input type="text" id="input2" placeholder="Номер осмотра">   
 </div>
 <div class="input-container">
     <input type="text" id="input3" placeholder="Ссылка на комплекс в GLPI">
@@ -108,10 +108,17 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
 </ul> 
-     <button class="button" id="submitButton">Готово</button>
+ <button class="button" id="submitButton">Готово</button>
     <div id="resultMessage" class="hidden"></div>
-    
+
     <script>
+        // Добавляем символ "№" в поле при получении фокуса
+        document.getElementById('input2').addEventListener('focus', function() {
+            if (this.value === '') { // Проверка, если поле пустое
+                this.value = '№';
+            }
+        });
+
         document.getElementById('submitButton').onclick = () => {
             const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
             const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
@@ -141,7 +148,6 @@
                 resultMessage.className = 'completed';
                 resultMessage.innerHTML = `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>`;
             }
-
             resultMessage.classList.add('visible');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         };
