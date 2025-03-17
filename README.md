@@ -71,7 +71,6 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Правильная ли точка выпуска ПАК в АРМ?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Имеется ли разрешение у внешней камеры ПАК?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> На СМК последняя версия прошивки?</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Этот тезис был выполнен?</label></li>
 </ul>
 
 <h1>GLPI</h1>
