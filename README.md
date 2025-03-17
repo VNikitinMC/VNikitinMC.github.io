@@ -1,5 +1,5 @@
 
-# Чек лист ПАК
+<# Чек лист ПАК
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -45,13 +45,25 @@
     <input type="text" id="input2" placeholder="Номер осмотра">
 </div>
 
-    <h1>Первоначальная настройка Планшета/Телефона</h1>
+    <h1>GLPI</h1>
     <ul id="checklist">
+  <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Все данные введены верно, выбор подчиненных организаций</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верная организация в заявке и связь с ней</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верные объекты комплекса</label></li>
+</ul>
+
+   <h1>Внешний вид ПАК</h1>
+<ul>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Люфт крепления камеры, порта и других деталей</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> На корпусе нет царапин и потертостей</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Плотное ли прилегание манжеты к ПАК?</label></li>
+</ul>
+
+<h1>Первоначальная настройка Планшета/Телефона</h1>
 <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Проверка обновления ONE UI на устройстве.</label></li>
         <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Проверка включения тумблера "Определение даты и времени по геопозиции"</label></li>
         <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Проверка работоспособности определения местоположения через приложение карт</label></li>
-        <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Проверка установлены ли приложения "MEDCONTROL", "Ассистент", "MEDCONTROL APP" на устройстве</label></li>
-    </ul>
+</ul>
 
     <h1>Настройка Ассистента</h1>
 <ul id="checklist">
@@ -65,13 +77,6 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Включен ли Bluetooth у принтера</label></li>
 </ul>
 
-<h1>Внешний вид ПАК</h1>
-<ul>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Люфт крепления камеры, порта и других деталей</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> На корпусе нет царапин и потертостей</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Плотное ли прилегание манжеты к ПАК?</label></li>
-</ul>
-
 <h1>MEDCONTROL</h1>
 <ul>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Совпадает ли организация с заявкой?</label></li>
@@ -80,19 +85,18 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> На СМК последняя версия прошивки?</label></li>
 </ul>
 
-<h1>GLPI</h1>
-<ul>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Все данные введены верно, выбор подчиненных организаций</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верная организация в заявке и связь с ней</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верные объекты комплекса</label></li>
-</ul>
-
 <h1>Комплектность ПАК</h1>
 <ul>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Провода для зарядки ПАК и принтера</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Мундштук для измерения алкоголя</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Все необходимые документы для ПАК</label></li>
 </ul>
+
+<h1>Отчет</h1>
+<ul>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
+</ul> 
 
 <h1>Отчет</h1>
 <ul>
@@ -124,3 +128,4 @@ document.getElementById('submitButton').onclick = () => {
 
 </body>
 </html>
+
