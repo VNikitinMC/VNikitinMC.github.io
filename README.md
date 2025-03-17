@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background: #121212; color: #fff; font-family: Arial, sans-serif;
+            background: #121212; color: #fff; font-family: Arial, sans-serif; position: relative;
         }
         .button {
             padding: 10px 20px; background: #1f1f1f; color: #fff; border: 1px solid #fff; border-radius: 5px; cursor: pointer; margin: 20px 0;
@@ -34,6 +34,20 @@
             transform: translateY(0);
             visibility: visible;
         }
+
+        .corner-image {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://medcontrol.cloud/wp-content/uploads/2024/03/MedControl.png" alt="Описание изображения" class="corner-image">
+
+
     </style>
 </head>
 <body>
