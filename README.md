@@ -44,7 +44,6 @@
             height: auto;
         }
 <body>
-    <img src="https://medcontrol.cloud/wp-content/uploads/2024/03/MedControl.png" alt="Описание изображения" class="corner-image">
 
 
     </style>
@@ -59,7 +58,7 @@
 <div class="input-container">
     <input type="text" id="input3" placeholder="Ссылка на комплекс в GLPI">
 </div>
-
+    <img src="https://medcontrol.cloud/wp-content/uploads/2024/03/MedControl.png" alt="Описание изображения" class="corner-image">
     <h1>GLPI</h1>
     <ul id="checklist">
   <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Все данные введены верно, выбор подчиненных организаций</label></li>
