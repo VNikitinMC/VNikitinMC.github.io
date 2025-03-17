@@ -116,7 +116,7 @@ document.getElementById('submitButton').onclick = () => {
         // Формируем сообщение с результатами
         resultMessage.textContent = unchecked.length 
             ? `❌ Не все выполнено: ${unchecked.join(", ")}` 
-            : `✅ Отправлено. Значение 1: ${value1}, Значение 2: ${value2}`;
+ : `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}`;
 
         resultMessage.classList.add('visible');
     };
