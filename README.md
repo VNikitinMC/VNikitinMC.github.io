@@ -45,7 +45,6 @@
         }
 <body>
 
-
     </style>
 </head>
 <body>
@@ -65,31 +64,26 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верные объекты комплекса</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Указан ли конечный пользователь? Если нет, то поставил на головную организацию</label></li>
 </ul>
-
    <h1>Внешний вид ПАК</h1>
 <ul>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Люфт крепления камеры, порта и других деталей</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> На корпусе нет царапин и потертостей</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Плотное ли прилегание манжеты к ПАК?</label></li>
 </ul>
-
 <h1>Первоначальная настройка Планшета/Телефона</h1>
 <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Проверка обновления ONE UI на устройстве.</label></li>
         <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Проверка включения тумблера "Определение даты и времени по геопозиции"</label></li>
         <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Проверка работоспособности определения местоположения через приложение карт</label></li>
-
     <h1>Настройка Ассистента</h1>
 <ul id="checklist">
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Имеются ли у приложения Ассистент все необходимые разрешения</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Провести тестовое подключение к устройству и проверить исправность работы соединения</label></li>
 </ul>
-
 <h1>Настройка принтера</h1>
 <ul>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Переименован ли принтер под номер ПАК</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Включен ли Bluetooth у принтера</label></li>
 </ul>
-
 <h1>MEDCONTROL</h1>
 <ul>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Совпадает ли организация с заявкой?</label></li>
@@ -97,50 +91,64 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Имеется ли разрешение у внешней камеры ПАК?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> На СМК стоит эталонная версия прошивки и совпадает с АРМ?</label></li>
 </ul>
-
 <h1>Комплектность ПАК</h1>
 <ul>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Провода для зарядки ПАК и принтера</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Мундштук для измерения алкоголя</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Все необходимые документы для ПАК</label></li>
 </ul>
-
 <h1>Мониторинг</h1>
 <ul>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Тестовый осмотр пройден без проишествий </label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Талончик на принтере напечатан верно, не оторван и остался в коробке</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Тестовый осмотр проверен через АРМ: работоспособность камер, звука и медицинского оборудования</label></li>
-        
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Тестовый осмотр проверен через АРМ: работоспособность камер, звука и медицинского оборудования</label></li>   
 </ul> 
-
- 
 <h1>Отчет</h1>
 <ul>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
 </ul> 
+<button class="button" id="submitButton">Готово</button>
+<div id="resultMessage"></div>
+<script>
+    document.getElementById('submitButton').onclick = () => {
+        const inputs = [
+        document.getElementById('input1'),
+        document.getElementById('input2'),
+        document.getElementById('input3'),
+        ];
 
-    <button class="button" id="submitButton">Готово</button>
-<div id="resultMessage" class="hidden"></div>
- <script>
-        document.getElementById('submitButton').onclick = () => {
-            const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
-            const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
+        const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
+        const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
 
-            const value1 = document.getElementById('input1').value;
-            const value2 = document.getElementById('input2').value;
-            const value3 = document.getElementById('input3').value;
+        let allFilled = true;
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                allFilled = false;
+                input.style.border = '2px solid red';
+        } else {
+                input.style.border = '1px solid white';
+        }
+        });
 
-            const resultMessage = document.getElementById('resultMessage');
-            resultMessage.className = unchecked.length ? 'error' : 'completed';
+        const value1 = inputs[0].value;
+        const value2 = inputs[1].value;
+        const value3 = inputs[2].value;
+        const resultMessage = document.getElementById('resultMessage');
 
-            resultMessage.innerHTML = unchecked.length 
-                ? `❌ Не все выполнено: ${unchecked.join(", ")}` 
-                : `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>`;
-
+        if (!allFilled) {
+            resultMessage.className = 'error';
+            resultMessage.innerHTML = '❌ Пожалуйста, заполните все поля.';
             resultMessage.classList.add('visible');
-        };
-    </script>
-
+            window.scrollTo(0, 0); / Прокрутка наверх /
+        } else {
+            resultMessage.className = unchecked.length ? 'error' : 'completed';
+            resultMessage.innerHTML = unchecked.length 
+            ? ❌ Не все выполнено: ${unchecked.join(", ")} 
+            : ✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>;
+            resultMessage.classList.add('visible');
+        }
+    };
+</script>
 </body>
 </html>
