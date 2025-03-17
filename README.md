@@ -35,11 +35,12 @@
             visibility: visible;
         }
 
-        .corner-image {
+.corner-image { 
             position: absolute;
-            top: 100px;
-            right: 100px;
-            width: 1000px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
             height: auto;
         }
 <body>
