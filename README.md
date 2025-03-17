@@ -5,66 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background: #121212; color: #fff; font-family: Arial, sans-serif; position: relative;
+            background: #121212; 
+            color: #fff; 
+            font-family: Arial, sans-serif; 
+            padding: 20px;
         }
         .button {
-            padding: 10px 20px; background: #1f1f1f; color: #fff; border: 1px solid #fff; border-radius: 5px; cursor: pointer; margin: 20px 0; z-index: 10;
+            padding: 10px 20px; 
+            background: #1f1f1f; 
+            color: #fff; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            margin: 20px 0;
         }
-.button:hover {
-    background: #4caf50; 
-    border: 1px solid #4caf50; 
-}
-        .completed { color: #fff; background: none; border: 1px solid green; padding: 10px; }
-        .error { color: red; background: none; border: 1px solid red; padding: 10px; }
-        input[type="checkbox"] { display: none; }
-        .custom-checkbox { display: inline-block; width: 24px; height: 24px; border: 2px solid #666; border-radius: 4px; background: #323232; margin-right: 10px; position: relative; }
-        input[type="checkbox"]:checked + .custom-checkbox { background: #4caf50; }
-        input[type="checkbox"]:checked + .custom-checkbox:after { content: "✔"; color: #fff; position: absolute; top: 0; left: 0; width: 24px; height: 24px; text-align: center; line-height: 24px; }
-        .input-container { margin: 20px 0; border: 1px solid #fff; border-radius: 5px; }
-        .input-container input { width: 100%; padding: 10px; background: #1f1f1f; color: #fff; border-radius: 5px; }
-             #resultMessage {
+        .button:hover {
+            background: #4caf50;
+        }
+        .input-container {
+            margin: 20px 0;
+        }
+        .input-container input {
+            width: 100%; 
+            padding: 10px; 
+            background: #1f1f1f; 
+            color: #fff; 
+            border-radius: 5px; 
+            border: 1px solid #fff;
+        }
+        #resultMessage {
             opacity: 0;
             transform: translateY(-10px);
             transition: opacity 0.5s ease, transform 0.5s ease;
             visibility: hidden;
-            margin-top: 20px; z-index: 10; 
+            margin-top: 20px;
         }
         #resultMessage.visible {
             opacity: 1;
             transform: translateY(0);
             visibility: visible;
         }
-
-.corner-image { 
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 200px;
-            height: auto;
-        }
-.background-image {
-            position: absolute;
-            top: 10%;
-            left: 5%;
-            width: 250px;
-            height: auto;
-            opacity: 0.3;
-            z-index: 0;
-        }
     </style>
 </head>
 <body>
-<div class="input-container">
-    <input type="text" id="input1" placeholder="Номер ПАК/СМК">
-</div>
-<div class="input-container">
-    <input type="text" id="input2" placeholder="Номер осмотра">
-</div>
-<div class="input-container">
-    <input type="text" id="input3" placeholder="Ссылка на комплекс в GLPI">
-</div>
-    <img src="https://medcontrol.cloud/wp-content/uploads/2024/03/MedControl.png" alt="Описание изображения" class="corner-image">
+    <div class="input-container">
+        <input type="text" id="input1" placeholder="Номер ПАК/СМК">
+    </div>
+    <div class="input-container">
+        <input type="text" id="input2" placeholder="Номер осмотра">
+    </div>
+    <div class="input-container">
+        <input type="text" id="input3" placeholder="Ссылка на комплекс в GLPI">
+    </div>
+    <button class="button" id="submitButton">Готово</button>
+    <div id="resultMessage"></div>
+    
     <h1>GLPI</h1>
     <ul id="checklist">
   <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Все данные введены верно, выбор подчиненных организаций</label></li>
