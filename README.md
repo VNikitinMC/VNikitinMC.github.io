@@ -52,6 +52,7 @@
   <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Все данные введены верно, выбор подчиненных организаций</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верная организация в заявке и связь с ней</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верные объекты комплекса</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Указан ли конечный пользователь? Если нет, то поставил на головную организацию</label></li>
 </ul>
 
    <h1>Внешний вид ПАК</h1>
@@ -83,7 +84,7 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Совпадает ли организация с заявкой?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Правильная ли точка выпуска ПАК в АРМ?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Имеется ли разрешение у внешней камеры ПАК?</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> На СМК последняя версия прошивки?</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> На СМК стоит эталонная версия прошивки и совпадает с АРМ?</label></li>
 </ul>
 
 <h1>Комплектность ПАК</h1>
@@ -92,6 +93,14 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Мундштук для измерения алкоголя</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Все необходимые документы для ПАК</label></li>
 </ul>
+
+<h1>Мониторинг</h1>
+<ul>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Тестовый осмотр пройден без проишествий </label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Талончик на принтере напечатан верно, не оторван и остался в коробке</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Тестовый осмотр проверен через АРМ: работоспособность камер, звука и медицинского оборудования</label></li>
+        
+</ul> 
 
 <h1>Отчет</h1>
 <ul>
