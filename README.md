@@ -46,7 +46,7 @@
 <div class="input-container">
     <input type="text" id="input3" placeholder="Ссылка на комплекс в GLPI">
 </div>
-<img src="http://example.com/image.jpg" alt="Описание изображения">
+<img src="https://medcontrol.cloud/wp-content/uploads/2024/03/MedControl.png" alt="Описание изображения">
 
     <h1>GLPI</h1>
     <ul id="checklist">
