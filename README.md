@@ -3,13 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пример изображения</title>
-</head>
-<body>
-    <h1>Тестовое изображение</h1>
-    <img src="http://placekitten.com/200/300" alt="Картинка котенка">
-</body>
-
     <style>
         body {
             background: #121212; color: #fff; font-family: Arial, sans-serif;
@@ -53,6 +46,7 @@
 <div class="input-container">
     <input type="text" id="input3" placeholder="Ссылка на комплекс в GLPI">
 </div>
+<img src="http://example.com/image.jpg" alt="Описание изображения">
 
     <h1>GLPI</h1>
     <ul id="checklist">
