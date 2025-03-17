@@ -1,4 +1,4 @@
-# Чек лист ПАК
+# Чек лист 
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -109,8 +109,8 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
 </ul> 
     <button class="button" id="submitButton">Готово</button>
-<div id="resultMessage" class="hidden"></div>
- <script>
+    <div id="resultMessage" class="hidden"></div>
+    <script>
         document.getElementById('submitButton').onclick = () => {
             const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
             const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
@@ -119,16 +119,31 @@
             const value2 = document.getElementById('input2').value;
             const value3 = document.getElementById('input3').value;
 
-            const resultMessage = document.getElementById('resultMessage');
-            resultMessage.className = unchecked.length ? 'error' : 'completed';
+            const emptyFields = [];
+            const inputs = [value1, value2, value3];
+            const inputElements = [document.getElementById('input1'), document.getElementById('input2'), document.getElementById('input3')];
 
-            resultMessage.innerHTML = unchecked.length 
-                ? `❌ Не все выполнено: ${unchecked.join(", ")}` 
-                : `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>`;
+            inputs.forEach((val, index) => {
+                if (!val.trim()) {
+                    emptyFields.push(`Поле "${inputElements[index].placeholder}" не заполнено.`);
+                    inputElements[index].parentElement.style.border = '1px solid red';
+                } else {
+                    inputElements[index].parentElement.style.border = '1px solid #fff';
+                }
+            });
+
+            const resultMessage = document.getElementById('resultMessage');
+            if (emptyFields.length || unchecked.length) {
+                resultMessage.className = 'error';
+                resultMessage.innerHTML = emptyFields.join("<br>") + (unchecked.length ? `<br>❌ Не все выполнено: ${unchecked.join(", ")}` : '');
+            } else {
+                resultMessage.className = 'completed';
+                resultMessage.innerHTML = `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>`;
+            }
 
             resultMessage.classList.add('visible');
+            window.scrollTo(0, 0);
         };
     </script>
-
 </body>
 </html>
