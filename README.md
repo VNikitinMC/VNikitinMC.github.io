@@ -110,26 +110,25 @@
 
     <button class="button" id="submitButton">Готово</button>
 <div id="resultMessage" class="hidden"></div>
-<script>
- document.getElementById('submitButton').onclick = () => {
+ <script>
+        document.getElementById('submitButton').onclick = () => {
             const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
             const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
-            
-            // Получаем значения из полей ввода
+
             const value1 = document.getElementById('input1').value;
             const value2 = document.getElementById('input2').value;
-            const value3 = document.getElementById('input3').value;  // Исправлено имя переменной
+            const value3 = document.getElementById('input3').value;
 
             const resultMessage = document.getElementById('resultMessage');
             resultMessage.className = unchecked.length ? 'error' : 'completed';
-            
-            // Формируем сообщение с результатами
-            resultMessage.textContent = unchecked.length 
+
+            resultMessage.innerHTML = unchecked.length 
                 ? `❌ Не все выполнено: ${unchecked.join(", ")}` 
-                : `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: ${value3}`;
+                : `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>`;
 
             resultMessage.classList.add('visible');
         };
     </script>
+
 </body>
 </html>
