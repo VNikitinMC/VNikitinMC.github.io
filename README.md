@@ -9,7 +9,7 @@
             background: #121212; color: #fff; font-family: Arial, sans-serif;
         }
         .button {
-            padding: 10px 20px; background: #f2f3f4; color: #fff; border: 1px solid #fff; border-radius: 5px; cursor: pointer; margin: 20px 0;
+            padding: 10px 20px; background: #1f1f1f; color: #fff; border: 1px solid #fff; border-radius: 5px; cursor: pointer; margin: 20px 0;
         }
 .button:hover {
     background: #4caf50; 
