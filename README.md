@@ -63,6 +63,9 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Люфт крепления камеры, порта и других деталей</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> На корпусе нет царапин и потертостей</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Плотное ли прилегание манжеты к ПАК?</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Все наклейки имеются на ПАК, наклеяны ровно и в правильном месте</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Вентилятор на ПАК работает исправно на вход и выход</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Наклейка с номером ПАК на корпусе, совпадает с номером СМК</label></li>
 </ul>
 
 <h1>MEDCONTROL</h1>
