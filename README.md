@@ -35,6 +35,7 @@
             visibility: visible;
         }
     </style>
+    <img src="medcontrol check/MedControl.jpg" alt="Описание изображения">
 </head>
 <body>
 <div class="input-container">
