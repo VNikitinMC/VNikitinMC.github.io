@@ -9,7 +9,7 @@
             background: #121212; color: #fff; font-family: Arial, sans-serif;
         }
         .button {
-            padding: 10px 20px; background: #1f1f1f; color: #fff; border: 1px solid #fff; border-radius: 5px; cursor: pointer; margin: 20px 0;
+            padding: 10px 20px; background: #f2f3f4; color: #fff; border: 1px solid #fff; border-radius: 5px; cursor: pointer; margin: 20px 0;
         }
 .button:hover {
     background: #4caf50; 
@@ -95,7 +95,7 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
 </ul>
-    <button class="button" id="submitButton">Готово</button>
+    <button class="button" id="submitButton">Отправить</button>
 <div id="resultMessage" class="hidden"></div>
 
 <script>
