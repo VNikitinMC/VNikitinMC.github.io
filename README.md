@@ -45,14 +45,6 @@
     <input type="text" id="input2" placeholder="Номер осмотра">
 </div>
 
-<ul>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
-</ul>
-    
-<button class="button" id="submitButton">Отправить</button>
-<div id="resultMessage" class="hidden"></div>
-
     <h1>Первоначальная настройка Планшета/Телефона</h1>
     <ul id="checklist">
 <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Проверка обновления ONE UI на устройстве.</label></li>
