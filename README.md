@@ -38,6 +38,7 @@
     </style>
 </head>
 <body>
+    <img src="C:\Users\LocalADM\Desktop" alt="Описание изображения" style="width: 100%; max-width: 500px;">
     <h1>Первоначальная настройка Планшета/Телефона</h1>
     <ul id="checklist">
 <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Проверка обновления ONE UI на устройстве.</label></li>
