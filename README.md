@@ -1,4 +1,4 @@
-# Чек лист 
+# Чек лист ПАК
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -108,8 +108,9 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
 </ul> 
-    <button class="button" id="submitButton">Готово</button>
+     <button class="button" id="submitButton">Готово</button>
     <div id="resultMessage" class="hidden"></div>
+    
     <script>
         document.getElementById('submitButton').onclick = () => {
             const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
@@ -142,7 +143,7 @@
             }
 
             resultMessage.classList.add('visible');
-            window.scrollTo(0, 0);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
     </script>
 </body>
