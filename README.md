@@ -8,7 +8,7 @@
             background: #121212; color: #fff; font-family: Arial, sans-serif; position: relative;
         }
         .button {
-            padding: 10px 20px; background: #1f1f1f; color: #fff; border: 1px solid #fff; border-radius: 5px; cursor: pointer; margin: 20px 0;
+            padding: 10px 20px; background: #1f1f1f; color: #fff; border: 1px solid #fff; border-radius: 5px; cursor: pointer; margin: 20px 0; z-index: 10;
         }
 .button:hover {
     background: #4caf50; 
@@ -27,7 +27,7 @@
             transform: translateY(-10px);
             transition: opacity 0.5s ease, transform 0.5s ease;
             visibility: hidden;
-            margin-top: 20px; 
+            margin-top: 20px; z-index: 10; 
         }
         #resultMessage.visible {
             opacity: 1;
@@ -43,9 +43,15 @@
             width: 200px;
             height: auto;
         }
-<body>
-
-
+.background-image {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 250px;
+            height: auto;
+            opacity: 0.3;
+            z-index: 0;
+        }
     </style>
 </head>
 <body>
