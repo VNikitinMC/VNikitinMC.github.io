@@ -39,8 +39,8 @@
             position: absolute;
             top: 100px;
             right: 100px;
-            width: 10000px;
-            height: 2000px;
+            width: 1000px;
+            height: auto;
         }
 <body>
     <img src="https://medcontrol.cloud/wp-content/uploads/2024/03/MedControl.png" alt="Описание изображения" class="corner-image">
