@@ -52,7 +52,7 @@
     <input type="text" id="input1" placeholder="Номер ПАК/СМК">
 </div>
 <div class="input-container">
-    <input type="text" id="input2" placeholder="Номер осмотра">
+    <input type="text" id="input2" placeholder="Номер осмотра" value="№">   
 </div>
 <div class="input-container">
     <input type="text" id="input3" placeholder="Ссылка на комплекс в GLPI">
