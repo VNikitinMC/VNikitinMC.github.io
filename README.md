@@ -37,13 +37,11 @@
 
         .corner-image {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 100px;
-            height: auto;
+            top: 100px;
+            right: 100px;
+            width: 10000px;
+            height: 2000px;
         }
-    </style>
-</head>
 <body>
     <img src="https://medcontrol.cloud/wp-content/uploads/2024/03/MedControl.png" alt="Описание изображения" class="corner-image">
 
