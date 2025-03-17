@@ -10,7 +10,11 @@
         }
         .button {
             padding: 10px 20px; background: #1f1f1f; color: #fff; border: 1px solid #fff; border-radius: 5px; cursor: pointer; margin: 20px 0;
-        }
+        } 
+        .button:hover {
+    background: #4caf50; 
+    border: 1px solid #4caf50; 
+}
         .completed { color: #fff; background: none; border: 1px solid green; padding: 10px; }
         .error { color: red; background: none; border: 1px solid red; padding: 10px; }
         input[type="checkbox"] { display: none; }
