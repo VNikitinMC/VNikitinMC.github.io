@@ -43,6 +43,9 @@
 <div class="input-container">
     <input type="text" id="input2" placeholder="Номер осмотра">
 </div>
+<div class="input-container">
+    <input type="text" id="input3" placeholder="Ссылка на комплекс в GLPI">
+</div>
 
     <h1>GLPI</h1>
     <ul id="checklist">
@@ -96,11 +99,6 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
 </ul> 
 
-<h1>Отчет</h1>
-<ul>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
-</ul>
     <button class="button" id="submitButton">Готово</button>
 <div id="resultMessage" class="hidden"></div>
 <script>
@@ -118,7 +116,7 @@ document.getElementById('submitButton').onclick = () => {
         // Формируем сообщение с результатами
         resultMessage.textContent = unchecked.length 
             ? `❌ Не все выполнено: ${unchecked.join(", ")}` 
- : `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}`;
+ : `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: ${value3}`;
 
         resultMessage.classList.add('visible');
     };
@@ -126,4 +124,3 @@ document.getElementById('submitButton').onclick = () => {
 
 </body>
 </html>
-
