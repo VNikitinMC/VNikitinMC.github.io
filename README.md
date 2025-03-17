@@ -38,6 +38,21 @@
     </style>
 </head>
 <body>
+<div class="input-container">
+    <input type="text" id="input1" placeholder="Номер ПАК/СМК">
+</div>
+<div class="input-container">
+    <input type="text" id="input2" placeholder="Номер осмотра">
+</div>
+
+<ul>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
+</ul>
+    
+<button class="button" id="submitButton">Отправить</button>
+<div id="resultMessage" class="hidden"></div>
+
     <h1>Первоначальная настройка Планшета/Телефона</h1>
     <ul id="checklist">
 <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Проверка обновления ONE UI на устройстве.</label></li>
@@ -63,9 +78,6 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Люфт крепления камеры, порта и других деталей</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> На корпусе нет царапин и потертостей</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Плотное ли прилегание манжеты к ПАК?</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Все наклейки имеются на ПАК, наклеяны ровно и в правильном месте</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Вентилятор на ПАК работает исправно на вход и выход</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Наклейка с номером ПАК на корпусе, совпадает с номером СМК</label></li>
 </ul>
 
 <h1>MEDCONTROL</h1>
@@ -95,18 +107,28 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
 </ul>
-    <button class="button" id="submitButton">Отправить</button>
+    <button class="button" id="submitButton">Готово</button>
 <div id="resultMessage" class="hidden"></div>
-
 <script>
-        document.getElementById('submitButton').onclick = () => {
-            const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
-            const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
-            const resultMessage = document.getElementById('resultMessage');
+document.getElementById('submitButton').onclick = () => {
+        const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
+        const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
+        
+        // Получаем значения из полей ввода
+        const value1 = document.getElementById('input1').value;
+        const value2 = document.getElementById('input2').value;
 
-            resultMessage.className = unchecked.length ? 'error' : 'completed';
-            resultMessage.textContent = unchecked.length ? `❌ Не все выполнено: ${unchecked.join(", ")}` : "✅ Отправлено";
-            
-            resultMessage.classList.add('visible');
-        };
-    </script>
+        const resultMessage = document.getElementById('resultMessage');
+        resultMessage.className = unchecked.length ? 'error' : 'completed';
+        
+        // Формируем сообщение с результатами
+        resultMessage.textContent = unchecked.length 
+            ? `❌ Не все выполнено: ${unchecked.join(", ")}` 
+            : `✅ Отправлено. Значение 1: ${value1}, Значение 2: ${value2}`;
+
+        resultMessage.classList.add('visible');
+    };
+</script>
+
+</body>
+</html>
