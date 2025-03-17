@@ -1,26 +1,51 @@
+# Чек лист ПАК
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-    body {
-        background: #121212; color: #fff; font-family: Arial, sans-serif; position: relative;
-    }
-    .button {
-        padding: 10px 20px; background: #1f1f1f; color: #fff; border: 1px solid #fff; border-radius: 5px; cursor: pointer; margin: 20px 0;
-    }
-    .button:hover {
-        background: #4caf50; border: 1px solid #4caf50; 
-    }
-    .completed { color: #fff; background: none; border: 1px solid green; padding: 10px; }
-    .error { color: red; background: none; border: 1px solid red; padding: 10px; }
-    .input-container { margin: 20px 0; border: 1px solid #fff; border-radius: 5px; }
-    .input-container input { width: 100%; padding: 10px; background: #1f1f1f; color: #fff; border-radius: 5px; }
-    #resultMessage {
-        opacity: 0; transform: translateY(-10px); transition: opacity 0.5s ease, transform 0.5s ease; visibility: hidden; margin-top: 20px; 
-    }
-    #resultMessage.visible { opacity: 1; transform: translateY(0); visibility: visible; }
-</style>
+    <style>
+        body {
+            background: #121212; color: #fff; font-family: Arial, sans-serif; position: relative;
+        }
+        .button {
+            padding: 10px 20px; background: #1f1f1f; color: #fff; border: 1px solid #fff; border-radius: 5px; cursor: pointer; margin: 20px 0;
+        }
+.button:hover {
+    background: #4caf50; 
+    border: 1px solid #4caf50; 
+}
+        .completed { color: #fff; background: none; border: 1px solid green; padding: 10px; }
+        .error { color: red; background: none; border: 1px solid red; padding: 10px; }
+        input[type="checkbox"] { display: none; }
+        .custom-checkbox { display: inline-block; width: 24px; height: 24px; border: 2px solid #666; border-radius: 4px; background: #323232; margin-right: 10px; position: relative; }
+        input[type="checkbox"]:checked + .custom-checkbox { background: #4caf50; }
+        input[type="checkbox"]:checked + .custom-checkbox:after { content: "✔"; color: #fff; position: absolute; top: 0; left: 0; width: 24px; height: 24px; text-align: center; line-height: 24px; }
+        .input-container { margin: 20px 0; border: 1px solid #fff; border-radius: 5px; }
+        .input-container input { width: 100%; padding: 10px; background: #1f1f1f; color: #fff; border-radius: 5px; }
+             #resultMessage {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            visibility: hidden;
+            margin-top: 20px; 
+        }
+        #resultMessage.visible {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+.corner-image { 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: auto;
+        }
+<body>
+
+    </style>
 </head>
 <body>
 <div class="input-container">
@@ -83,47 +108,27 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
 </ul> 
-<button class="button" id="submitButton">Готово</button>
-<div id="resultMessage"></div>
-<script>
-    document.getElementById('submitButton').onclick = () => {
-        const inputs = [
-        document.getElementById('input1'),
-        document.getElementById('input2'),
-        document.getElementById('input3'),
-        ];
+    <button class="button" id="submitButton">Готово</button>
+<div id="resultMessage" class="hidden"></div>
+ <script>
+        document.getElementById('submitButton').onclick = () => {
+            const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
+            const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
 
-        const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
-        const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
+            const value1 = document.getElementById('input1').value;
+            const value2 = document.getElementById('input2').value;
+            const value3 = document.getElementById('input3').value;
 
-        let allFilled = true;
-        inputs.forEach(input => {
-            if (!input.value.trim()) {
-                allFilled = false;
-                input.style.border = '2px solid red';
-        } else {
-                input.style.border = '1px solid white';
-        }
-        });
-
-        const value1 = inputs[0].value;
-        const value2 = inputs[1].value;
-        const value3 = inputs[2].value;
-        const resultMessage = document.getElementById('resultMessage');
-
-        if (!allFilled) {
-            resultMessage.className = 'error';
-            resultMessage.innerHTML = '❌ Пожалуйста, заполните все поля.';
-            resultMessage.classList.add('visible');
-            window.scrollTo(0, 0); / Прокрутка наверх /
-        } else {
+            const resultMessage = document.getElementById('resultMessage');
             resultMessage.className = unchecked.length ? 'error' : 'completed';
+
             resultMessage.innerHTML = unchecked.length 
-            ? ❌ Не все выполнено: ${unchecked.join(", ")} 
-            : ✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>;
+                ? `❌ Не все выполнено: ${unchecked.join(", ")}` 
+                : `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>`;
+
             resultMessage.classList.add('visible');
-        }
-    };
-</script>
+        };
+    </script>
+
 </body>
 </html>
