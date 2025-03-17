@@ -109,6 +109,7 @@ document.getElementById('submitButton').onclick = () => {
         // Получаем значения из полей ввода
         const value1 = document.getElementById('input1').value;
         const value2 = document.getElementById('input2').value;
+        const value2 = document.getElementById('input3').value;
 
         const resultMessage = document.getElementById('resultMessage');
         resultMessage.className = unchecked.length ? 'error' : 'completed';
