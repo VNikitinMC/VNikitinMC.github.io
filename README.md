@@ -122,7 +122,7 @@
             const value1 = document.getElementById('input1').value;
             const value2 = document.getElementById('input2').value;
             const value3 = document.getElementById('input3').value;
-            const value3 = document.getElementById('input4').value;
+            const value4 = document.getElementById('input4').value;
 
             const resultMessage = document.getElementById('resultMessage');
             resultMessage.className = unchecked.length ? 'error' : 'completed';
