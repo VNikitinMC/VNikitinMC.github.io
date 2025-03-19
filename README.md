@@ -52,10 +52,13 @@
     <input type="text" id="input1" placeholder="Номер ПАК/СМК">
 </div>
 <div class="input-container">
-    <input type="text" id="input2" placeholder="Номер осмотра">   
+    <input type="text" id="input2" placeholder="Номер осмотра">
 </div>
 <div class="input-container">
     <input type="text" id="input3" placeholder="Ссылка на комплекс в GLPI">
+</div>
+<div class="input-container">
+    <input type="text" id="input4" placeholder="Номер наклейки пломбы">
 </div>
     <h1>GLPI</h1>
     <ul id="checklist">
@@ -107,18 +110,11 @@
 <ul>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Имеется ли наклейка "Опломбировано" на месте среза коробки ПАК?</label></li>
 </ul> 
- <button class="button" id="submitButton">Готово</button>
-    <div id="resultMessage" class="hidden"></div>
-
-    <script>
-        // Добавляем символ "№" в поле при получении фокуса
-        document.getElementById('input2').addEventListener('focus', function() {
-            if (this.value === '') { // Проверка, если поле пустое
-                this.value = '№';
-            }
-        });
-
+    <button class="button" id="submitButton">Готово</button>
+<div id="resultMessage" class="hidden"></div>
+ <script>
         document.getElementById('submitButton').onclick = () => {
             const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
             const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
@@ -126,31 +122,18 @@
             const value1 = document.getElementById('input1').value;
             const value2 = document.getElementById('input2').value;
             const value3 = document.getElementById('input3').value;
-
-            const emptyFields = [];
-            const inputs = [value1, value2, value3];
-            const inputElements = [document.getElementById('input1'), document.getElementById('input2'), document.getElementById('input3')];
-
-            inputs.forEach((val, index) => {
-                if (!val.trim()) {
-                    emptyFields.push(`Поле "${inputElements[index].placeholder}" не заполнено.`);
-                    inputElements[index].parentElement.style.border = '1px solid red';
-                } else {
-                    inputElements[index].parentElement.style.border = '1px solid #fff';
-                }
-            });
+            const value3 = document.getElementById('input4').value;
 
             const resultMessage = document.getElementById('resultMessage');
-            if (emptyFields.length || unchecked.length) {
-                resultMessage.className = 'error';
-                resultMessage.innerHTML = emptyFields.join("<br>") + (unchecked.length ? `<br>❌ Не все выполнено: ${unchecked.join(", ")}` : '');
-            } else {
-                resultMessage.className = 'completed';
-                resultMessage.innerHTML = `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>`;
-            }
+            resultMessage.className = unchecked.length ? 'error' : 'completed';
+
+            resultMessage.innerHTML = unchecked.length 
+                ? `❌ Не все выполнено: ${unchecked.join(", ")}` 
+                : `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Номер ПАК/СМК: ${value4}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>`;
+
             resultMessage.classList.add('visible');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
     </script>
+
 </body>
 </html>
