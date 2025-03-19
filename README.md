@@ -41,7 +41,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 200px;
-            height: auto;
+            height: auto;     
         }
 <body>
 
@@ -52,13 +52,13 @@
     <input type="text" id="input1" placeholder="Номер ПАК/СМК">
 </div>
 <div class="input-container">
-    <input type="text" id="input2" placeholder="Номер осмотра">
+    <input type="text" id="input2" placeholder="Номер осмотра">   
 </div>
 <div class="input-container">
     <input type="text" id="input3" placeholder="Ссылка на комплекс в GLPI">
 </div>
 <div class="input-container">
-    <input type="text" id="input4" placeholder="Номер наклейки пломбы">
+    <input type="text" id="input4" placeholder="Номер пломбы наклейки">
 </div>
     <h1>GLPI</h1>
     <ul id="checklist">
@@ -110,11 +110,17 @@
 <ul>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Имеется ли наклейка "Опломбировано" на месте среза коробки ПАК?</label></li>
 </ul> 
-    <button class="button" id="submitButton">Готово</button>
-<div id="resultMessage" class="hidden"></div>
- <script>
+ <button class="button" id="submitButton">Готово</button>
+    <div id="resultMessage" class="hidden"></div>
+
+    <script>
+        document.getElementById('input2').addEventListener('focus', function() {
+            if (this.value === '') { // Проверка, если поле пустое
+                this.value = '№';
+            }
+        });
+
         document.getElementById('submitButton').onclick = () => {
             const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
             const unchecked = checkboxes.filter(cb => !cb.checked).map(cb => cb.parentElement.textContent.trim());
@@ -124,13 +130,33 @@
             const value3 = document.getElementById('input3').value;
             const value4 = document.getElementById('input4').value;
 
+            const emptyFields = [];
+            const inputs = [value1, value2, value3, value4];
+            const inputElements = [document.getElementById('input1'), document.getElementById('input2'), document.getElementById('input3'), document.getElementById('input4')];
+
+            inputs.forEach((val, index) => {
+                if (!val.trim()) {
+                    emptyFields.push(`Поле "${inputElements[index].placeholder}" не заполнено.`);
+                    inputElements[index].parentElement.style.border = '1px solid red';
+                } else {
+                    inputElements[index].parentElement.style.border = '1px solid #fff';
+                }
+            });
+
             const resultMessage = document.getElementById('resultMessage');
-            resultMessage.className = unchecked.length ? 'error' : 'completed';
-
-            resultMessage.innerHTML = unchecked.length 
-                ? `❌ Не все выполнено: ${unchecked.join(", ")}` 
-                : `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер осмотра: ${value2}, Номер ПАК/СМК: ${value4}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>`;
-
+            if (emptyFields.length || unchecked.length) {
+                resultMessage.className = 'error';
+                resultMessage.innerHTML = emptyFields.join("<br>") + (unchecked.length ? `<br>❌ Не все выполнено: ${unchecked.join(", ")}` : '');
+            } else {
+                resultMessage.className = 'completed';
+                resultMessage.innerHTML = `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер пломбы наклейки: ${value4}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>`;
+            }
+            resultMessage.classList.add('visible');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+</html>
             resultMessage.classList.add('visible');
         };
     </script>
