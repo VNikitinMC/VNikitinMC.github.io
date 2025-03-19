@@ -157,9 +157,3 @@
     </script>
 </body>
 </html>
-            resultMessage.classList.add('visible');
-        };
-    </script>
-
-</body>
-</html>
