@@ -110,6 +110,7 @@
 <ul>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span>Имеется ли промбирующая наклейка на линии среза коробки ПАК?</label></li>
 </ul> 
  <button class="button" id="submitButton">Готово</button>
     <div id="resultMessage" class="hidden"></div>
