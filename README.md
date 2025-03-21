@@ -93,6 +93,7 @@
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Правильная ли точка выпуска ПАК в АРМ?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Имеется ли разрешение у внешней камеры ПАК?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> На СМК стоит эталонная версия прошивки и совпадает с АРМ?</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Версия монитора совпадает с этолонной версией в ПРОД</label></li>
 </ul>
 <h1>Комплектность ПАК</h1>
 <ul>
@@ -110,14 +111,14 @@
 <ul>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Доложено ли начальнику производства о готовности пак к отправке?</label></li>
     <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Верно ли указаны номера ПАК и адрес отгрузки?</label></li>
-    <li><label><input type="checkbox"> <span class="custom-checkbox"></span>Имеется ли промбирующая наклейка на линии среза коробки ПАК?</label></li>
+    <li><label><input type="checkbox"> <span class="custom-checkbox"></span> Имеется ли промбирующая наклейка на линии среза коробки ПАК?</label></li>
 </ul> 
  <button class="button" id="submitButton">Готово</button>
     <div id="resultMessage" class="hidden"></div>
 
     <script>
         document.getElementById('input2').addEventListener('focus', function() {
-            if (this.value === '') { // Проверка, если поле пустое
+            if (this.value === '') {
                 this.value = '№';
             }
         });
