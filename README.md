@@ -151,7 +151,7 @@
                 resultMessage.innerHTML = emptyFields.join("<br>") + (unchecked.length ? `<br>❌ Не все выполнено: ${unchecked.join(", ")}` : '');
             } else {
                 resultMessage.className = 'completed';
-                resultMessage.innerHTML = `✅ Отправлено. Номер ПАК/СМК: ${value1}, Номер пломбы наклейки: ${value4}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>`;
+                resultMessage.innerHTML = `✅ ПАК к отправке готов. Номер ПАК/СМК: ${value1}, Номер пломбы наклейки: ${value4}, Номер осмотра: ${value2}, Ссылка на комплекс в GLPI: <a href="${value3}" target="_blank" style="color: #4caf50;">${value3}</a>`;
             }
             resultMessage.classList.add('visible');
             window.scrollTo({ top: 0, behavior: 'smooth' });
